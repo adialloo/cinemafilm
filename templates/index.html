@@ -12,6 +12,7 @@
     <ul>
     {% for movie in movies %}
         <li class="box-shadow">{{ movie['title'] }} <span class="movie-date">({{ movie['release_date'] }})</span>
+            <img src="https://image.tmdb.org/t/p/w500/{{ movie['poster_path'] }} " alt="">
             <form action="/movie/{{ movie['id'] }}" method="get">
                 <button class=" btn-primary" type="submit">Détails</button>
             </form>
