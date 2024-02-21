@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Détails du film</title>
+</head>
+<body>
+    <div class="container">
+            <h1 >Détails du film</h1>
+
+    <section class="box-shadow">
+    <h2>{{ movie['title'] }}</h2>
+    <p>Date de sortie : {{ movie['release_date'] }}</p>
+    <p>Résumé : {{ movie['overview'] }}</p>
+    <p>Langue originale : {{ movie['original_language'] }}</p>
+    <p>Note moyenne : {{ movie['vote_average'] }}</p>
+</section>
+</div>
+</body>
+</html>

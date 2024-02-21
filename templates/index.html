@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films au cinéma</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>Liste des films au cinéma</h1>
+    <ul>
+    {% for movie in movies %}
+        <li class="box-shadow">{{ movie['title'] }} <span class="movie-date">({{ movie['release_date'] }})</span>
+            <form action="/movie/{{ movie['id'] }}" method="get">
+                <button class=" btn-primary" type="submit">Détails</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
