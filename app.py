@@ -1,7 +1,12 @@
 from flask import Flask, render_template ,request
 import requests
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
+api_key = os.getenv('API_KEY')
 
 api_key = '46f3de7d1fd8790343c98572d954a595'
 
@@ -48,4 +53,4 @@ def get_movie_details(url):
         return None
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)
